@@ -28,7 +28,8 @@ Questo progetto trasforma un modulo **ESP8266** (come NodeMCU o Wemos D1 Mini) i
 | **DATA** | D2 (GPIO 4) |
 | **GND** | GND |
 
-[Image of ESP8266 NodeMCU pinout]
+<img width="588" height="477" alt="image" src="https://github.com/user-attachments/assets/fc08e33b-730e-4d28-802b-5431d5ef69fb" />
+
 
 ## 💻 Requisiti Software (Arduino IDE)
 
