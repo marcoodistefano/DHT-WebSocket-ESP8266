@@ -1,6 +1,6 @@
 # 🌡️ ESP8266 Real-Time DHT21 Monitor
 
-Questo progetto trasforma un modulo **ESP8266** (come NodeMCU o Wemos D1 Mini) in un server di monitoraggio ambientale in tempo reale. Utilizza un sensore **DHT21 (AM2301)** per rilevare temperatura e umidità e trasmette i dati istantaneamente ai browser connessi tramite protocollo **WebSockets**.
+Questo progetto trasforma un modulo **ESP8266** (come Wemos D1 Mini) in un server di monitoraggio ambientale in tempo reale. Utilizza un sensore **DHT21 (AM2301)** per rilevare temperatura e umidità e trasmette i dati istantaneamente ai browser connessi tramite protocollo **WebSockets**.
 
 [Image of ESP8266 DHT21 connection diagram]
 
