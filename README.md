@@ -18,7 +18,6 @@ Questo progetto trasforma un modulo **ESP8266** (come NodeMCU o Wemos D1 Mini) i
 | :--- | :--- |
 | **ESP8266** | Scheda di sviluppo (NodeMCU, Wemos D1 Mini, ecc.) |
 | **DHT21 (AM2301)** | Sensore di temperatura e umidità ad alta precisione |
-| **Resistenza 10kΩ** | Pull-up tra VCC e Pin Dati (spesso già integrata nel modulo) |
 | **Cavi Jumper** | Per i collegamenti |
 
 ## 🔌 Schema di Collegamento
