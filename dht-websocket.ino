@@ -1,7 +1,7 @@
 #include "DHT.h"
 #include <ESP8266WiFi.h>
 #include <ESP8266WebServer.h>
-#include <WebSocketsServer.h> // Libreria per WebSocket
+#include <WebSocketsServer.h>
 #include <ESP8266mDNS.h>
 
 #define DHTPIN D2
@@ -132,7 +132,7 @@ void getHome() {
               grid: { color: '#f0f0f0' }
             },
             x: { 
-              title: { display: true, text: 'Orario', font: { weight: 'bold' } },
+              title: { display: true, text: 'Orario (hh:mm:ss)', font: { weight: 'bold' } },
               grid: { display: false } 
             }
           },
@@ -177,7 +177,7 @@ void getHome() {
   server.send(200, "text/html", html);
 }
 
-// --- LOGICA SERVER ---
+// --- SERVER ---
 void onWebSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length) {
   if(type == WStype_CONNECTED) {
     Serial.printf("[%u] Client connesso!\n", num);
@@ -185,7 +185,7 @@ void onWebSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t leng
 }
 
 void setup() {
-  Serial.begin(115200); // Velocità consigliata per ESP8266
+  Serial.begin(115200);
   dht.begin();
 
   WiFi.begin(ssid, pass);
@@ -215,10 +215,10 @@ void loop() {
     float t = dht.readTemperature();
 
     if (!isnan(h) && !isnan(t)) {
-      // Crea stringa JSON: {"T":22.5, "H":50.2}
+      // Crea stringa JSON: {"T":22.5, "H":50.2} da stampare sul monitor seriale
       String json = "{\"T\":" + String(t) + ",\"H\":" + String(h) + "}";
       
-      // SPINGE il dato a tutti i browser connessi simultaneamente
+      // Push del dato a tutti i browser connessi simultaneamente
       webSocket.broadcastTXT(json);
       Serial.println("Broadcast: " + json);
     }
